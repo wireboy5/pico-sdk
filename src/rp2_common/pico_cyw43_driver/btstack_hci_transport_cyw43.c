@@ -67,7 +67,7 @@ static int hci_transport_cyw43_open(void) {
     cyw43_hal_get_mac(0, (uint8_t*)&addr);
     addr[BD_ADDR_LEN - 1]++;
     hci_set_chipset(btstack_chipset_cyw43_instance());
-    hci_set_bd_addr(addr);
+    //hci_set_bd_addr(addr);
 
     btstack_run_loop_set_data_source_handler(&transport_data_source, &hci_transport_data_source_process);
     btstack_run_loop_enable_data_source_callbacks(&transport_data_source, DATA_SOURCE_CALLBACK_POLL);
